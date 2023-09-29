@@ -58,6 +58,9 @@ namespace OrderTracker.Tests
       Vendor a2ndVendorInstance = new Vendor(aSecondVendorName, aSecondVendorDesc);
       List<Vendor> allCurrentVendors = new List<Vendor> { justAddedInstance1, a2ndVendorInstance };
       List<Vendor> retrievedVendors = Vendor.GetAll();
+      CollectionAssert.AreEqual(allCurrentVendors, retrievedVendors);
     }
+
+
   }
 }
