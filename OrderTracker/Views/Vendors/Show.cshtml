@@ -16,13 +16,16 @@
   {
     <p>There are no orders yet from this vendor.</p>
   }
-  <ul>
-    @foreach(Order entry in @Model["orders"])
-    {
-      <li>@entry.Title <a href='/vendors/@Model["vendors"].Id/orders/@entry.Id'>View Details</a></li>
-    }
-  </ul>
-  <p><a href='/vendors/@Model["vendors"].Id/orders/new'>Add an Order</a></p>
+  else 
+  {
+    <ul>
+      @foreach(Order entry in @Model["orders"])
+      {
+        <li>@entry.Title <a href='/vendors/@Model["vendor"].Id/orders/@entry.Id'>View Details</a></li>
+      }
+    </ul>
+  }
+  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add an Order</a></p>
   <p><a href="/vendors">Back to Vendors List</a></p>
   <br>
   <p><a href='/'>Back to home page</a></p>
