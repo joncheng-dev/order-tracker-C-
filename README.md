@@ -1,4 +1,4 @@
-# Pierre's Vendor Order Tracker
+# Pierre's Bakery - Vendor Order Tracker
 
 #### A C# web application for a bakery owner, Pierre, to keep track the vendors that purchase baked goods from him and the orders belonging to those vendors.
 
@@ -55,7 +55,7 @@ _4c. To run tests, navigate to the project's test directory `OrderTracker.Tests`
 
 ## Known Bugs
 
-- _Currently `$ dotnet run` does not open a browser window. Must use `$ dotnet watch run`, as specified in Setup/Installation Requirements step 4a._
+- _Currently the `$ dotnet run` command does not open a browser window. Must use `$ dotnet watch run`, as specified in Setup/Installation Requirements step 4a. However, you can run `$dotnet run` and navigate to `https://localhost:5001` manually, which seems to work._
 - _Please report any bugs you find with a message to joncheng.dev@gmail.com_
 
 ## License
