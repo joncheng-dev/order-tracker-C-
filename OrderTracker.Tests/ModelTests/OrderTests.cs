@@ -56,6 +56,26 @@ namespace OrderTracker.Tests
       Order instanceOfOrder = new Order(formCollectedTitle, formCollectedDescription, formCollectedPrice, formCollectedDate);
       string resultFromGet = instanceOfOrder.Date;
       Assert.AreEqual(formCollectedDate, resultFromGet);          
+    }
+
+    [TestMethod]
+    public void SetProperties_SetsTitleDescriptionPriceDateIndividually_Void()
+    {
+      string modifiedTitle = "County Fair Order";
+      string modifiedDescription = "200 loaves of bread; pre-cut";
+      int modifiedPrice = 2000;
+      string modifiedDate = "Oct 29, 2023";
+      Order instanceOfOrder = new Order(modifiedTitle, modifiedDescription, modifiedPrice, modifiedDate);
+      // Modified via Setter
+      instanceOfOrder.Title = modifiedTitle;
+      instanceOfOrder.Description = modifiedDescription;
+      instanceOfOrder.Price = modifiedPrice;
+      instanceOfOrder.Date = modifiedDate;
+      // Check if they are equal
+      Assert.AreEqual(modifiedTitle, instanceOfOrder.Title);       
+      Assert.AreEqual(modifiedDescription, instanceOfOrder.Description);       
+      Assert.AreEqual(modifiedPrice, instanceOfOrder.Price);       
+      Assert.AreEqual(modifiedDate, instanceOfOrder.Date);       
     }    
   }
 }
