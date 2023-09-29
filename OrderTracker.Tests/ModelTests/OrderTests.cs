@@ -7,8 +7,13 @@ namespace OrderTracker.Tests
 {
 
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -76,6 +81,36 @@ namespace OrderTracker.Tests
       Assert.AreEqual(modifiedDescription, instanceOfOrder.Description);       
       Assert.AreEqual(modifiedPrice, instanceOfOrder.Price);       
       Assert.AreEqual(modifiedDate, instanceOfOrder.Date);       
-    }    
+    }
+
+    [TestMethod]
+    public void GetAllOrders_ReturnsEmptyList_OrderList()
+    {
+      List<Order> aList = new List<Order> { };
+      List<Order> resultOfGetAll = Order.GetAllOrders();
+      CollectionAssert.AreEqual(aList, resultOfGetAll);
+    }
+
+    [TestMethod]
+    public void GetAllOrders_ReturnsAllOrders_OrderList()
+    {
+      // Set up and create two instances of orders
+      string order1Title = "Saturday Market Order";
+      string order1Description = "20 loaves of bread; pre-cut";
+      int order1Price = 200;
+      string order1Date = "Sept 29, 2023";
+      Order order1 = new Order(order1Title, order1Description, order1Price, order1Date);
+      string order2Title = "Boy Scouts Fund Raiser";
+      string order2Description = "300 pastries";
+      int order2Price = 500;
+      string order2Date = "Oct 14, 2023";
+      Order order2 = new Order(order2Title, order2Description, order2Price, order2Date);
+      // Add to list
+      List<Order> aList = new List<Order> { order1, order2 };
+ 
+      List<Order> resultOfGetAll = Order.GetAllOrders();
+      CollectionAssert.AreEqual(aList, resultOfGetAll);
+    }
+
   }
 }
