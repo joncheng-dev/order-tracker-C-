@@ -112,5 +112,25 @@ namespace OrderTracker.Tests
       CollectionAssert.AreEqual(aList, resultOfGetAll);
     }
 
+    [TestMethod]
+    public void GetId_ReturnsId_Int()
+    {
+      int expectedOrderIdOfSecondOrderAdded = 2;
+      // Create instances of Order
+      string order1Title = "Saturday Market Order";
+      string order1Description = "20 loaves of bread; pre-cut";
+      int order1Price = 200;
+      string order1Date = "Sept 29, 2023";
+      Order order1 = new Order(order1Title, order1Description, order1Price, order1Date);
+      string order2Title = "Boy Scouts Fund Raiser";
+      string order2Description = "300 pastries";
+      int order2Price = 500;
+      string order2Date = "Oct 14, 2023";
+      Order order2 = new Order(order2Title, order2Description, order2Price, order2Date);
+      // Get Id with Getter
+      int idUsingGetter = order2.Id;
+
+      Assert.AreEqual(expectedOrderIdOfSecondOrderAdded, idUsingGetter);
+    }
   }
 }
