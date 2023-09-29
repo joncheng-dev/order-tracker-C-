@@ -9,6 +9,11 @@ namespace OrderTracker.Tests
   [TestClass]
   public class OrderTests
   {
-
+    [TestMethod]
+    public void OrderConstructor_CreatesInstanceOfOrder_Order()
+    {
+      Order instanceOfOrder = new Order();
+      Assert.AreEqual(typeof(Order), instanceOfOrder.GetType());
+    }
   }
 }
