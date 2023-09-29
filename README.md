@@ -1,4 +1,4 @@
-# Vendor Order Tracker
+# Pierre's Vendor Order Tracker
 
 #### A C# web application for a bakery owner, Pierre, to keep track the vendors that purchase baked goods from him and the orders belonging to those vendors.
 
@@ -7,15 +7,21 @@
 ## Technologies Used
 
 - _C#_
+- _HTML_
 - _.NET 6_
 - _MSTest_
 - _ASP.NET Core MVC_
 
 ## Description
 
-- _The user can enter how many loaves of bread and pieces of pastry they wish to order. The app will use algorithms to calculate a total cost. The user may then choose to edit their order or confirm it._
-- _This console app was written using C#, run using .NET framework, and its business logic tested using MSTest._
-- _Key objectives include: C# basics such as using custom classes and namespaces, methods, auto-implemented properties, and test-driven development (TDD)._
+- _Upon landing on the splash page, the user is welcomed with a message "Welcome, Pierre!"._
+- _To start, click `See vendors`. This will bring the user to a page displaying a list of vendors. There is an option to `Add a new vendor`. Here the user can fill out a form to add this vendor to the list._
+- _Clicking a vendor on the list allows the user to add an order associated with this vendor -- after completion of a form._
+- _This will display any and all existing orders associated with the vendor clicked previously. The user may choose to add more orders._
+- _Clicking on any orders on this list of orders allows the user to see details of the order._
+- _Data remains saved in the Models business logic files until the browser is closed or the terminal is no longer running the app._
+- _This web application was written using C#, run using .NET framework, its business logic tested using MSTest, and its ability to run in a browser enabled using the ASP.NET Core MVC framework._
+- _Key objectives include: C# basics, the Model-View-Controller (MVC) coding pattern, HTTP method GET and POST request/responses, and coverage of model logic using test-driven development (TDD)._
 
 ## Setup/Installation Requirements
 
@@ -26,22 +32,22 @@ _2. Navigate to where you want to place the cloned directory._
 _3. Clone the repository from the GitHub link by entering in this command:_
 
 > ```bash
-> $ git clone https://github.com/joncheng-dev/bakery-app-C-
+> $ git clone https://github.com/joncheng-dev/order-tracker-C-
 > ```
 
-_4a. In the command line, run this command to compile and execute the console application. Since this is a console application, you'll interact with it through text commands in your terminal._
+_4a. Navigate to the project's production directory `OrderTracker`. In the command line, run this command to compile and execute the web application. A new browser window should open, allowing you to interact with it._
 
 > ```bash
-> $ dotnet run
+> $ dotnet watch run
 > ```
 
-_4b. Optionally, to compile this console app without running it, enter:_
+_4b. Optionally, to compile this web app without running it, enter:_
 
 > ```bash
 > $ dotnet build
 > ```
 
-_4c. To run tests, navigate to the project's test directory and execute the command:_
+_4c. To run tests, navigate to the project's test directory `OrderTracker.Tests` and execute the command:_
 
 > ```bash
 > $ dotnet test
@@ -49,7 +55,8 @@ _4c. To run tests, navigate to the project's test directory and execute the comm
 
 ## Known Bugs
 
-- _Please report any bugs if you find any with a message to joncheng.dev@gmail.com_
+- _Currently `$ dotnet run` does not open a browser window. Must use `$ dotnet watch run`, as specified in Setup/Installation Requirements step 4a._
+- _Please report any bugs you find with a message to joncheng.dev@gmail.com_
 
 ## License
 
