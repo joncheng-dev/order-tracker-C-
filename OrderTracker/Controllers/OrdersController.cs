@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using OrderTracker.Models;
 using System.Collections.Generic;
+using OrderTracker.Models;
 
 namespace OrderTracker.Controllers
 {
