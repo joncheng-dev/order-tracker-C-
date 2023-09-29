@@ -27,5 +27,16 @@ namespace OrderTracker.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpGet("/vendors/{id}")]
+    public ActionResult Show(int id)
+    {
+      Vendor searchAndFoundVendor = Vendor.Find(id);
+      Dictionary<string, object> sendToView = new Dictionary<string, object>();
+      List<Order> correspondingListOfOrders = searchAndFoundVendor.Orders;
+      sendToView.Add("vendor", searchAndFoundVendor);
+      sendToView.Add("orders", correspondingListOfOrders);
+      return View(sendToView);
+    }
+
   }
 }
