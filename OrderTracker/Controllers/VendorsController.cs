@@ -6,6 +6,6 @@ namespace OrderTracker.Controllers
 {
   public class VendorsController : Controller
   {
-
+    
   }
 }
