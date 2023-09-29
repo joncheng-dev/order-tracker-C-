@@ -74,5 +74,32 @@ namespace OrderTracker.Tests
       Vendor idSearchReturnedVendor = Vendor.Find(idOfVendorTargetted);
       Assert.AreEqual(a2ndVendorInstance, idSearchReturnedVendor);      
     }
+
+    [TestMethod]
+    public void AddOrder_AddOrderToVendor_OrderList()
+    {
+      // Create instance of Vendor
+      string inputtedVendorName = "Sloppy Joe's Extraordinary Peanut Butter Sandwiches";
+      string inputtedVendorDescription = "A local sandwich shop revitalizing the time-tested peanut butter sandwich.";
+      Vendor aVendorInstance = new Vendor(inputtedVendorName, inputtedVendorDescription);
+      // Create 2 instances of Order
+      string order1Title = "Saturday Market Order";
+      string order1Description = "20 loaves of bread; pre-cut";
+      int order1Price = 200;
+      string order1Date = "Sept 29, 2023";
+      Order order1 = new Order(order1Title, order1Description, order1Price, order1Date);
+      string order2Title = "Boy Scouts Fund Raiser";
+      string order2Description = "300 pastries";
+      int order2Price = 500;
+      string order2Date = "Oct 14, 2023";
+      Order order2 = new Order(order2Title, order2Description, order2Price, order2Date);
+      // Make dummy list to compare to.
+      List<Order> dummyListOfOrders = new List<Order> { order1, order2 };
+      // Add orders to list in instance of Vendor class
+      aVendorInstance.AddOrder(order1);
+      aVendorInstance.AddOrder(order2);
+      List<Order> resultingListOfAddOrderMethod = aVendorInstance.Orders;
+      CollectionAssert.AreEqual(dummyListOfOrders, resultingListOfAddOrderMethod);
+    }
   }
 }
