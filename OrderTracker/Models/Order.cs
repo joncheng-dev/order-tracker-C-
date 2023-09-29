@@ -4,6 +4,9 @@ namespace OrderTracker.Models
 {
   public class Order
   {
-
+    public Order()
+    {
+      
+    }
   }
 }
