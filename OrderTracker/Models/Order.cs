@@ -9,11 +9,12 @@ namespace OrderTracker.Models
     public int Price { get; } // can update with method
     public string Date { get; }
 
-    public Order(string title, string description, int price)
+    public Order(string title, string description, int price, string date)
     {
       Title = title;
       Description = description;
       Price = price;
+      Date = date;
     }
   }
 }

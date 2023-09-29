@@ -12,7 +12,7 @@ namespace OrderTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order instanceOfOrder = new Order("a title", "a description", 100);
+      Order instanceOfOrder = new Order("a title", "a description", 100, "a date");
       Assert.AreEqual(typeof(Order), instanceOfOrder.GetType());
     }
 
@@ -20,7 +20,7 @@ namespace OrderTracker.Tests
     public void GetTitle_ReturnsTitle_String()
     {
       string formCollectedTitle = "Saturday Market Order";
-      Order instanceOfOrder = new Order(formCollectedTitle, "a description", 100);
+      Order instanceOfOrder = new Order(formCollectedTitle, "a description", 100, "a date");
       string resultFromGet = instanceOfOrder.Title;
       Assert.AreEqual(formCollectedTitle, resultFromGet);      
     }
@@ -30,7 +30,7 @@ namespace OrderTracker.Tests
     {
       string formCollectedTitle = "Saturday Market Order";
       string formCollectedDescription = "20 loaves of bread; pre-cut";
-      Order instanceOfOrder = new Order(formCollectedTitle, formCollectedDescription, 100);
+      Order instanceOfOrder = new Order(formCollectedTitle, formCollectedDescription, 100, "a date");
       string resultFromGet = instanceOfOrder.Description;
       Assert.AreEqual(formCollectedDescription, resultFromGet);     
     }
@@ -41,9 +41,21 @@ namespace OrderTracker.Tests
       string formCollectedTitle = "Saturday Market Order";
       string formCollectedDescription = "20 loaves of bread; pre-cut";
       int formCollectedPrice = 200;
-      Order instanceOfOrder = new Order(formCollectedTitle, formCollectedDescription, formCollectedPrice);
+      Order instanceOfOrder = new Order(formCollectedTitle, formCollectedDescription, formCollectedPrice, "a date");
       int resultFromGet = instanceOfOrder.Price;
       Assert.AreEqual(formCollectedPrice, resultFromGet);     
+    }
+
+    [TestMethod]
+    public void GetDate_ReturnsDate_String()
+    {
+      string formCollectedTitle = "Saturday Market Order";
+      string formCollectedDescription = "20 loaves of bread; pre-cut";
+      int formCollectedPrice = 200;
+      string formCollectedDate = "Sept 29, 2023";
+      Order instanceOfOrder = new Order(formCollectedTitle, formCollectedDescription, formCollectedPrice, formCollectedDate);
+      string resultFromGet = instanceOfOrder.Date;
+      Assert.AreEqual(formCollectedDate, resultFromGet);          
     }    
   }
 }
