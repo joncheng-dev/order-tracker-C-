@@ -61,6 +61,18 @@ namespace OrderTracker.Tests
       CollectionAssert.AreEqual(allCurrentVendors, retrievedVendors);
     }
 
-
+    [TestMethod]
+    public void Find_ReturnsVendorWithSpecifiedId_Vendor()
+    {
+      string inputtedVendorName1 = "Sloppy Joe's Extraordinary Peanut Butter Sandwiches";
+      string inputtedVendorDescription1 = "A local sandwich shop revitalizing the time-tested peanut butter sandwich.";
+      Vendor justAddedInstance1 = new Vendor(inputtedVendorName1, inputtedVendorDescription1);
+      string aSecondVendorName = "Geno's Groovy Gelato Shoppe";
+      string aSecondVendorDesc = "A mom and pop dessert shop bringing you quality gelato paired with scrumptious pastries.";
+      Vendor a2ndVendorInstance = new Vendor(aSecondVendorName, aSecondVendorDesc);
+      int idOfVendorTargetted = 2;
+      Vendor idSearchReturnedVendor = Vendor.Find(idOfVendorTargetted);
+      Assert.AreEqual(a2ndVendorInstance, idSearchReturnedVendor);      
+    }
   }
 }
