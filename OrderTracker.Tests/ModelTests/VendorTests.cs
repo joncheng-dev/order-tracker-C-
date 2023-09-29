@@ -76,7 +76,7 @@ namespace OrderTracker.Tests
     }
 
     [TestMethod]
-    public void AddOrder_AddOrderToVendor_OrderList()
+    public void AddOrder_AssociatesOrdersWithVendorInstance_OrderList()
     {
       // Create instance of Vendor
       string inputtedVendorName = "Sloppy Joe's Extraordinary Peanut Butter Sandwiches";
