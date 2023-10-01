@@ -6,14 +6,15 @@
 <h1>Add a Vendor</h1>
 <p>Add a vendor by filling out the input fields below and clicking Add.</p>
 <form action="/vendors" method="post">
-  <label for="enteredName">Vendor Name</label>
-  <input id="enteredName" name="enteredName" type="text" required>
+  <div class="form-group">
+    <label for="enteredName" class="form-label mt-4">Vendor Name</label>
+    <input id="enteredName" class="form-control" name="enteredName" type="text" required>
+  </div>
+  <div class="form-group">
+    <label for="enteredDescription" class="form-label mt-4">Vendor Description</label>
+    <input id="enteredDescription" class="form-control" name="enteredDescription" type="text" required>
+  </div>
   <br>
-  <label for="enteredDescription">Vendor Description</label>
-  <input id="enteredDescription" name="enteredDescription" type="text" required>
-  <br>
-  <button type="submit">Add</button>
+  <button type="submit" class="btn btn-secondary">Add</button>
 </form>
 <p><a href="/vendors">Back to Vendors List</a></p>
-<br>
-<p><a href='/'>Back to home page</a></p> 

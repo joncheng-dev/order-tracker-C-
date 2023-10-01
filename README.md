@@ -11,6 +11,7 @@
 - _.NET 6_
 - _MSTest_
 - _ASP.NET Core MVC_
+- _Razor View Engine_
 
 ## Description
 
