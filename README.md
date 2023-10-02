@@ -42,7 +42,13 @@ _4a. Navigate to the project's production directory `OrderTracker`. In the comma
 > $ dotnet watch run
 > ```
 
-_4b. Optionally, to compile this web app without running it, enter:_
+_Alternatively, using the command `dotnet run` will execute the application, but you will have to manually open a browser window and navigate to the application url (ex: `https://localhost:5001` or `http://localhost:5000`)_
+
+> ```bash
+> $ dotnet run
+> ```
+
+_4b. To compile this web app without running it, enter:_
 
 > ```bash
 > $ dotnet build
@@ -56,8 +62,8 @@ _4c. To run tests, navigate to the project's test directory `OrderTracker.Tests`
 
 ## Known Bugs
 
-- _Currently the `$ dotnet run` command does not open a browser window. Must use `$ dotnet watch run`, as specified in Setup/Installation Requirements step 4a. However, you can run `$dotnet run` and navigate to `https://localhost:5001` manually, which seems to work._
-- _Please report any bugs you find with a message to joncheng.dev@gmail.com_
+- _Currently, all fields in user interface forms take strings -- without taking into consideration proper formatting of date, except for price, which takes an integer number._
+- _Please report any additional bugs you find with a message to joncheng.dev@gmail.com_
 
 ## License
 

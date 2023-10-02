@@ -3,10 +3,20 @@
 }
 
 @using OrderTracker.Models;
-<h1>Order Details:</h1>
-<h3>@Model["order"].Title</h3>
-<p>Description: @Model["order"].Description</p>
-<p>Price: @Model["order"].Price</p>
-<p>Date: @Model["order"].Date</p>
+<h1>Order Details</h1>
+<p>Details for the specified order are listed below.</p>
+  <div class="card border-dark mb-3" style="max-width: 20rem;">
+    <div class="card-header">Order Details</div>
+    <div class="card-body">
+      <h4 class="card-title">@Model["order"].Title</h4>
+      <ul>
+        <li>Description: @Model["order"].Description</li>
+        <li>Price: @Model["order"].Price</li>
+        <li>Date: @Model["order"].Date</li>
+      </ul>
+    </div>
+  </div>
 <br>
+<p><a href='/vendors/@Model["vendor"].Id'>Back to Orders List</a></p>
 <p><a href="/vendors">Back to Vendors List</a></p>
+

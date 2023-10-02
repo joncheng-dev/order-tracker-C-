@@ -3,20 +3,30 @@
 }
 
 @using OrderTracker.Models;
-<h1>List of Orders from this Vendor:</h1>
-<h5>@Model["vendor"].Name</h5>
+<h1>Orders from @Model["vendor"].Name</h1>
+<p>Current list of orders placed by the specified vendor.</p>
 @if(@Model["orders"].Count == 0)
 {
-  <p>There are no orders yet from this vendor.</p>
+  <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+        <div class="card-header">Message</div>
+        <div class="card-body">
+          <h4 class="card-title">Orders not found</h4>
+          <p class="card-text">There are no orders yet from this vendor.</p>
+        </div>
+  </div> 
 }
 else 
 {
-  <ul>
-    @foreach(Order entry in @Model["orders"])
-    {
-      <li>@entry.Title <a href='/vendors/@Model["vendor"].Id/orders/@entry.Id'>View Details</a></li>
-    }
-  </ul>
+  @foreach(Order entry in @Model["orders"])
+  {
+    <div class="card border-success mb-3" style="max-width: 20rem;">
+      <div class="card-header">Order</div>
+      <div class="card-body">
+        <h4 class="card-title">@entry.Title</h4>
+        <p class="card-text"><a href='/vendors/@Model["vendor"].Id/orders/@entry.Id'>View Details</a></p>
+      </div>
+    </div>    
+  }
 }
 <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add an Order</a></p>
 <p><a href="/vendors">Back to Vendors List</a></p>
