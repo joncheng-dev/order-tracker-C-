@@ -19,7 +19,7 @@
 @foreach (Vendor entry in Model)
 {
   <div class="card border-dark mb-3" style="max-width: 20rem;">
-    <div class="card-header">Vendor</div>
+    <div class="card-header">Vendor @entry.Id</div>
     <div class="card-body">
       <h4 class="card-title">@entry.Name</h4>
       <p class="card-text"><a href="/vendors/@entry.Id">Display Orders</a></p>

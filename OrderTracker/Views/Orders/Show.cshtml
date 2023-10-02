@@ -9,14 +9,24 @@
     <div class="card-header">Order Details</div>
     <div class="card-body">
       <h4 class="card-title">@Model["order"].Title</h4>
-      <ul>
-        <li>Description: @Model["order"].Description</li>
-        <li>Price: @Model["order"].Price</li>
-        <li>Date: @Model["order"].Date</li>
-      </ul>
+        <table class="table table-hover">
+          <tbody>
+            <tr class="table-light">
+              <th scope="row">Description</th>
+              <td>@Model["order"].Description</td>
+            </tr>
+            <tr class="table-light">
+              <th scope="row">Price</th>
+              <td>@Model["order"].Price</td>
+            </tr>
+            <tr class="table-light">
+              <th scope="row">Date</th>
+              <td>@Model["order"].Date</td>
+            </tr>
+          </tbody>
+        </table>
     </div>
   </div>
 <br>
 <p><a href='/vendors/@Model["vendor"].Id'>Back to Orders List</a></p>
 <p><a href="/vendors">Back to Vendors List</a></p>
-

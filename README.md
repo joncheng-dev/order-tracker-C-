@@ -16,7 +16,7 @@
 ## Description
 
 - _Upon landing on the splash page, the user is welcomed with a message "Welcome, Pierre!"._
-- _To start, click `See vendors`. This will bring the user to a page displaying a list of vendors. There is an option to `Add a new vendor`. Here the user can fill out a form to add this vendor to the list._
+- _To start, click `See all vendors`. This will bring the user to a page displaying a list of vendors. There is an option to `Add a new vendor`. Here the user can fill out a form to add this vendor to the list._
 - _Clicking a vendor on the list allows the user to add an order associated with this vendor -- after completion of a form._
 - _This will display any and all existing orders associated with the vendor clicked previously. The user may choose to add more orders._
 - _Clicking on any orders on this list of orders allows the user to see details of the order._
@@ -63,6 +63,7 @@ _4c. To run tests, navigate to the project's test directory `OrderTracker.Tests`
 ## Known Bugs
 
 - _Currently, all fields in user interface forms take strings -- without taking into consideration proper formatting of date, except for price, which takes an integer number._
+- _If adding more than about 3 orders per vendor, the link to `Back to Vendors List` may start to get cut off by the footer._
 - _Please report any additional bugs you find with a message to joncheng.dev@gmail.com_
 
 ## License
